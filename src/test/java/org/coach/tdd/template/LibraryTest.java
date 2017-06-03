@@ -34,5 +34,4 @@ public class LibraryTest {
         assertThat(basicUnit.getUnitCelltatus(otherNumber4),is(0));
         assertThat(basicUnit.getUnitCelltatus(otherNumber5),is(0));
     }
-
 }
