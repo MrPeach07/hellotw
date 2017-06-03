@@ -36,10 +36,13 @@ public class LibraryTest {
 	public void get_lifegame_cell_around_of_4_corner_msg(){
     	LifeGame lifeGame = new LifeGame(4);
     	lifeGame.init();
-    	lifeGame.getAroundStatus(3,3);
-    	int[][] result = {{0,0,0},{0,0,0},{0,0,0}};
+		Cell cell1 =new Cell(0,2,1);
+		Cell cell2 =new Cell(1,2,1);
+		lifeGame.putCell(cell1);
+		lifeGame.putCell(cell2);
+    	int[][] result = {{1,1,0},{0,0,0},{0,0,0}};
 //    	assertArrayEquals(lifeGame.getAroundStatus(0,0),result);
-		assertThat(lifeGame.getAroundStatus(0,0),is(result));
+		assertThat(lifeGame.getAroundStatus(0,3),is(result));
 	}
 	@Test
 	public void get_lifegame_cell_around_of_4_line_msg(){
@@ -83,7 +86,7 @@ public class LibraryTest {
     	lifeGame.putCell(cell1);
 //    	lifeGame.init(cell2);
 //    	lifeGame.init(cell3);
-		lifeGame.freshFrame();
+		assertThat(lifeGame.isfreshFrame(),is(true));
 
 	}
 }

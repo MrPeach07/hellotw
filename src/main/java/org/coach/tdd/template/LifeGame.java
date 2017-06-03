@@ -44,7 +44,7 @@ public class LifeGame {
 
 		}
 		else if(0==x&&framesize-1==y){
-			int [][] aroundUnit={{frame[x-1][y],frame[x+1][y-1],frame[x+1][y]},{0,0,0},{0,0,0}};
+			int [][] aroundUnit={{frame[x][y-1],frame[x+1][y-1],frame[x+1][y]},{0,0,0},{0,0,0}};
 			return aroundUnit;
 		}
 		else if(framesize-1==x&&0==y){
@@ -79,7 +79,8 @@ public class LifeGame {
 
 		}
 	}
-	public void freshFrame(){
+	public boolean isfreshFrame(){
+		boolean flag =false;
 		BasicUnit basicUnit=new BasicUnit();
 		for(int i=0;i<framesize;i++){
 			for (int j =0;j<framesize;j++){
@@ -91,8 +92,10 @@ public class LifeGame {
 		for(int i=0;i<framesize;i++) {
 			for (int j = 0; j < framesize; j++) {
 				System.out.print(frame[i][j]);
-
 			}
+			System.out.println("");
 		}
+		flag=true;
+		return flag;
 	}
 }
