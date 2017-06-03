@@ -74,7 +74,7 @@ public class LifeGame {
             return aroundUnit;
 		}
 		else {
-			int [][] aroundUnit= {{frame[x-1][y-1],frame[x-1][y],frame[x-1][y]},{frame[x][y-1],0,frame[x][y+1]},{frame[x+1][y-1],frame[x+1][y],frame[x+1][y+1]}};
+			int [][] aroundUnit= {{frame[x-1][y-1],frame[x-1][y],frame[x-1][y+1]},{frame[x][y-1],0,frame[x][y+1]},{frame[x+1][y-1],frame[x+1][y],frame[x+1][y+1]}};
 			return  aroundUnit;
 
 		}

@@ -36,10 +36,42 @@ public class LibraryTest {
 	public void get_lifegame_cell_around_of_4_corner_msg(){
     	LifeGame lifeGame = new LifeGame(4);
     	lifeGame.init();
-    	lifeGame.getAroundStatus(0,0);
+    	lifeGame.getAroundStatus(3,3);
     	int[][] result = {{0,0,0},{0,0,0},{0,0,0}};
 //    	assertArrayEquals(lifeGame.getAroundStatus(0,0),result);
 		assertThat(lifeGame.getAroundStatus(0,0),is(result));
+	}
+	@Test
+	public void get_lifegame_cell_around_of_4_line_msg(){
+		LifeGame lifeGame = new LifeGame(4);
+		lifeGame.init();
+		Cell cell1 =new Cell(0,0,1);
+		Cell cell2 =new Cell(1,0,1);
+		Cell cell3 =new Cell(1,1,1);
+		Cell cell4 =new Cell(1,2,1);
+		lifeGame.putCell(cell1);
+		lifeGame.putCell(cell2);
+		lifeGame.putCell(cell3);
+		lifeGame.putCell(cell4);
+		int[][] result = {{1,0,1},{1,0,1},{0,0,0}};
+//    	assertArrayEquals(lifeGame.getAroundStatus(0,0),result);
+		assertThat(lifeGame.getAroundStatus(0,1),is(result));
+	}
+	@Test
+	public void get_lifegame_cell_around_other_up_test(){
+		LifeGame lifeGame = new LifeGame(4);
+		lifeGame.init();
+		Cell cell1 =new Cell(1,1,1);
+		Cell cell2 =new Cell(1,2,1);
+		Cell cell3 =new Cell(1,3,1);
+		Cell cell4 =new Cell(2,1,1);
+		lifeGame.putCell(cell1);
+		lifeGame.putCell(cell2);
+		lifeGame.putCell(cell3);
+		lifeGame.putCell(cell4);
+		int[][] result = {{1,1,1},{1,0,0},{0,0,0}};
+//    	assertArrayEquals(lifeGame.getAroundStatus(0,0),result);
+		assertThat(lifeGame.getAroundStatus(2,2),is(result));
 	}
     @Test
 	public void lifegame_run_init_1_cell_live() {
