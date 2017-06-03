@@ -8,16 +8,17 @@ package org.coach.tdd.template;
  * Cell类存储细胞的坐标，生命状态，周围细胞状态。
  */
 public class Cell {
-	private int location_x=0;
-	private  int location_y=0;
-	private int cellStatus=0;
-	private int[][] aroundCells=new int[3][3];
+	private int location_x = 0;
+	private int location_y = 0;
+	private int cellStatus = 0;
+	private int[][] aroundCells = new int[3][3];
 
 	/**
 	 * 构造方法的描述
-	 * @param location_x	细胞的x坐标
-	 * @param location_y	细胞的y坐标
-	 * @param cellStatus	细胞的状态
+	 *
+	 * @param location_x 细胞的x坐标
+	 * @param location_y 细胞的y坐标
+	 * @param cellStatus 细胞的状态
 	 */
 	public Cell(int location_x, int location_y, int cellStatus) {
 		this.location_x = location_x;
@@ -43,10 +44,11 @@ public class Cell {
 
 	/**
 	 * 获取更新后的细胞状态
+	 *
 	 * @return
 	 */
-	public int getAfterTurnCellStatus(){
-		BasicUnit basicUnit=new BasicUnit();
+	public int getAfterTurnCellStatus() {
+		BasicUnit basicUnit = new BasicUnit();
 		this.setCellStatus(basicUnit.getUnitCelltatus(aroundCells));
 		return this.getCellStatus();
 	}
