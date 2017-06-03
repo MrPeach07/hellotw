@@ -14,4 +14,11 @@ public class LibraryTest {
 //        basicUnit.setTestUnit(threelive);
         assertThat(basicUnit.getUnitCelltatus(threelive),is(1));
     }
+    @Test
+    public void when_two_cells_around_is_keep() {
+        LifeGame lifeGame = new LifeGame();
+        BasicUnit basicUnit = new BasicUnit();
+        int twolive[][] = {{0,0,0},{0,0,1},{0,0,1}};
+        assertThat(basicUnit.getUnitCelltatus(twolive),is(0));
+    }
 }

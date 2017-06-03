@@ -28,11 +28,15 @@ public class BasicUnit {
 		for (int i =0 ;i<3;i++){
 			for(int j =0;j<3;j++){
 				if(1==basicUnit[i][j])
-					numberofcell+=1;
+					if(1==i&&1==j) {}
+					else
+						numberofcell+=1;
 			}
 		}
 		if(3==numberofcell)
 			return 1;
+		else if(2==numberofcell)
+			return basicUnit[1][1];
 		return 0;
 	}
 }
