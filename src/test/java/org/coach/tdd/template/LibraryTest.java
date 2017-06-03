@@ -106,9 +106,9 @@ public class LibraryTest {
 
 		LifeGame lifeGame=new LifeGame(4);
 		lifeGame.init();
-		Cell cell1 =new Cell(1,2,1);
-		Cell cell2 =new Cell(2,2,1);
-		Cell cell3 =new Cell(2,1,1);
+		Cell cell1 =new Cell(0,0,1);
+		Cell cell2 =new Cell(1,0,1);
+		Cell cell3 =new Cell(2,0,1);
 //    	Cell cell3 =new Cell(2,3,1);
 		lifeGame.putCell(cell1);
 		lifeGame.putCell(cell2);
@@ -116,5 +116,59 @@ public class LibraryTest {
 //    	lifeGame.init(cell3);
 		assertThat(lifeGame.isfreshFrame(),is(true));
 
+	}
+	@Test
+	public void lifegame_run_4_cell_live() {
+		LifeGame lifeGame = new LifeGame(4);
+		lifeGame.init();
+		Cell cell1 = new Cell(0, 0, 1);
+		Cell cell2 = new Cell(0, 1, 1);
+		Cell cell3 = new Cell(1, 0, 1);
+		Cell cell4 = new Cell(1, 1, 1);
+		lifeGame.putCell(cell1);
+		lifeGame.putCell(cell2);
+		lifeGame.putCell(cell3);
+		lifeGame.putCell(cell4);
+//    	lifeGame.init(cell3);
+		assertThat(lifeGame.isfreshFrame(), is(true));
+		assertThat(lifeGame.isfreshFrame(), is(true));
+	}
+
+	@Test
+	public void lifegame_run_many_cells_live() {
+		LifeGame lifeGame = new LifeGame(4);
+		lifeGame.init();
+		Cell cell1 = new Cell(0, 0, 1);
+		Cell cell2 = new Cell(0, 2, 1);
+		Cell cell3 = new Cell(1, 2, 1);
+		Cell cell4 = new Cell(2, 0, 1);
+		Cell cell5 = new Cell(2, 1, 1);
+		Cell cell6 = new Cell(2, 2, 1);
+		lifeGame.putCell(cell1);
+		lifeGame.putCell(cell2);
+		lifeGame.putCell(cell3);
+		lifeGame.putCell(cell4);
+		lifeGame.putCell(cell5);
+		lifeGame.putCell(cell6);
+//    	lifeGame.init(cell3);
+		assertThat(lifeGame.isfreshFrame(), is(true));
+	}
+	@Test
+	public void final_run(){
+		LifeGame lifeGame = new LifeGame(4);
+		lifeGame.init();
+		Cell cell1 = new Cell(0, 0, 1);
+		Cell cell2 = new Cell(0, 1, 1);
+		Cell cell3 = new Cell(1, 0, 1);
+		Cell cell4 = new Cell(1, 1, 1);
+		Cell cell5 = new Cell(1, 2, 1);
+		Cell cell6 = new Cell(2, 1, 1);
+		lifeGame.putCell(cell1);
+		lifeGame.putCell(cell2);
+		lifeGame.putCell(cell3);
+		lifeGame.putCell(cell4);
+		lifeGame.putCell(cell5);
+		lifeGame.putCell(cell6);
+		assertThat(lifeGame.run(lifeGame), is(true));
 	}
 }
