@@ -23,4 +23,16 @@ public class BasicUnit {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+	public int getUnitCelltatus(int[][] basicUnit){
+		int numberofcell=0;
+		for (int i =0 ;i<3;i++){
+			for(int j =0;j<3;j++){
+				if(1==basicUnit[i][j])
+					numberofcell+=1;
+			}
+		}
+		if(3==numberofcell)
+			return 1;
+		return 0;
+	}
 }
