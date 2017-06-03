@@ -89,4 +89,32 @@ public class LibraryTest {
 		assertThat(lifeGame.isfreshFrame(),is(true));
 
 	}
+	@Test
+	public void lifegame_run_init_2_cell_live(){
+		LifeGame lifeGame=new LifeGame(4);
+		lifeGame.init();
+		Cell cell1 =new Cell(1,2,1);
+    	Cell cell2 =new Cell(2,2,1);
+//    	Cell cell3 =new Cell(2,3,1);
+		lifeGame.putCell(cell1);
+    	lifeGame.putCell(cell2);
+//    	lifeGame.init(cell3);
+		assertThat(lifeGame.isfreshFrame(),is(true));
+	}
+	@Test
+	public void lifegame_run_3_cell_live() {
+
+		LifeGame lifeGame=new LifeGame(4);
+		lifeGame.init();
+		Cell cell1 =new Cell(1,2,1);
+		Cell cell2 =new Cell(2,2,1);
+		Cell cell3 =new Cell(2,1,1);
+//    	Cell cell3 =new Cell(2,3,1);
+		lifeGame.putCell(cell1);
+		lifeGame.putCell(cell2);
+		lifeGame.putCell(cell3);
+//    	lifeGame.init(cell3);
+		assertThat(lifeGame.isfreshFrame(),is(true));
+
+	}
 }
